@@ -1,8 +1,16 @@
 const express = require("express");
+const cors = require('cors');
 const fs = require("fs");
 const path = require("path");
 
 const app = express();
+
+app.use(cors({
+  origin: '*', // Allow all origins, you can specify 'http://your-angular-app.com'
+  methods: 'GET,POST,PUT,DELETE,OPTIONS',
+  allowedHeaders: 'Content-Type, Authorization'
+}));
+
 app.use(express.json());
 
 // Import json
